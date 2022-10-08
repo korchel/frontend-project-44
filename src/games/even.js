@@ -1,4 +1,5 @@
-import { getUserName, play } from '../index.js';
+import { play } from '../index.js';
+import getUserName from '../cli.js'
 
 const isEven = n => (n % 2) === 0 ? true : false;
 const randomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
