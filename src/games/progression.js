@@ -15,7 +15,7 @@ const sequenceGenerator = () => {
     const indexOfHiddenMember = randomIndex(sequence);
     const hiddenMember = sequence[indexOfHiddenMember];
     sequence.splice(indexOfHiddenMember, 1, '..');
-    console.log(sequence.join(' '));
+    console.log(`Question: ${sequence.join(' ')}`);
     return String(hiddenMember);
 };
 

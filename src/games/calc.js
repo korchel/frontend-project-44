@@ -20,7 +20,7 @@ const calculation = () => {
             result = String(operand1 * operand2);
             break;
         }
-    console.log(`${operand1} ${operation} ${operand2}`);
+    console.log(`Question: ${operand1} ${operation} ${operand2}`);
     return result;
 };
 

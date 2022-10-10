@@ -6,7 +6,7 @@ const randomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min
 
 const even = () => {
     const number = randomNumber(0, 1000);
-    console.log(number);
+    console.log(`Question: ${number}`);
     return isEven(number) ? 'yes' : 'no';
 };
 
