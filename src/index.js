@@ -6,7 +6,7 @@ const play = (numberOfRounds, game, userName) => {
         const rightAnswer = game();
         const userAnswer = readlineSync.question('Your answer: ');
         if (userAnswer !== rightAnswer) {
-            console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}`);
+            console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
             return;
         } else {
             console.log('Correct!');
