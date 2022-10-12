@@ -8,10 +8,8 @@ const randomIndex = (array) => Math.floor(Math.random() * array.length);
 const sequenceGenerator = () => {
   const sequenceDifference = randomNumber(2, 11);
   const numberOfSequenceMembers = randomNumber(5, 11);
-  const sequence = Array.from({ length: numberOfSequenceMembers }).map((item, index) => {
-    item = (index + 1) * sequenceDifference;
-    return item;
-  });
+  const sequence = Array.from({ length: numberOfSequenceMembers })
+    .map((item, index) => (index + 1) * sequenceDifference);
   const indexOfHiddenMember = randomIndex(sequence);
   const hiddenMember = sequence[indexOfHiddenMember];
   sequence.splice(indexOfHiddenMember, 1, '..');

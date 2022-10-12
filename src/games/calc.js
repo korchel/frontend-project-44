@@ -19,6 +19,7 @@ const calculation = () => {
     case '*':
       result = String(operand1 * operand2);
       break;
+    default:
   }
   console.log(`Question: ${operand1} ${operation} ${operand2}`);
   return result;

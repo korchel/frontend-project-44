@@ -16,4 +16,4 @@ const play = (numberOfRounds, game, userName) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export { play };
+export default play;
