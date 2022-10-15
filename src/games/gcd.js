@@ -1,7 +1,5 @@
 import play from '../index.js';
-import getUserName from '../cli.js';
-
-const randomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+import randomNumber from '../randomNumbers.js';
 
 const gcd = () => {
   let a = randomNumber(0, 100);
@@ -17,10 +15,9 @@ const gcd = () => {
   return String(a + b);
 };
 
-const gcdGame = () => {
-  const userName = getUserName();
-  console.log('Find the greatest common divisor of given numbers.');
-  play(3, gcd, userName);
+const playGcdGame = () => {
+  const question = 'Find the greatest common divisor of given numbers.';
+  play(gcd, question);
 };
 
-export default gcdGame;
+export default playGcdGame;

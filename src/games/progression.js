@@ -1,15 +1,15 @@
 import play from '../index.js';
-import getUserName from '../cli.js';
-
-const randomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+import randomNumber from '../randomNumbers.js';
 
 const randomIndex = (array) => Math.floor(Math.random() * array.length);
 
+const makeSequence = (sequenceLength, sequenceDifference) => Array.from({ length: sequenceLength })
+  .map((item, index) => (index + 1) * sequenceDifference);
+
 const sequenceGenerator = () => {
   const sequenceDifference = randomNumber(2, 11);
-  const numberOfSequenceMembers = randomNumber(5, 11);
-  const sequence = Array.from({ length: numberOfSequenceMembers })
-    .map((item, index) => (index + 1) * sequenceDifference);
+  const sequenceLength = randomNumber(5, 11);
+  const sequence = makeSequence(sequenceLength, sequenceDifference);
   const indexOfHiddenMember = randomIndex(sequence);
   const hiddenMember = sequence[indexOfHiddenMember];
   sequence.splice(indexOfHiddenMember, 1, '..');
@@ -17,10 +17,9 @@ const sequenceGenerator = () => {
   return String(hiddenMember);
 };
 
-const progressionGame = () => {
-  const userName = getUserName();
-  console.log('What number is missing in the progression?');
-  play(3, sequenceGenerator, userName);
+const playProgressionGame = () => {
+  const question = 'What number is missing in the progression?';
+  play(sequenceGenerator, question);
 };
 
-export default progressionGame;
+export default playProgressionGame;

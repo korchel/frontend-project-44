@@ -1,11 +1,7 @@
 import play from '../index.js';
-import getUserName from '../cli.js';
+import randomNumber from '../randomNumbers.js';
 
-const randomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-
-const primeNumber = () => {
-  const number = randomNumber(2, 100);
-  console.log(`Question: ${number}`);
+const isPrime = (number) => {
   let numberIsPrime = true;
   for (let n = 2; n < number / 2 + 1; n += 1) {
     if (number % n === 0) {
@@ -13,13 +9,18 @@ const primeNumber = () => {
       break;
     }
   }
-  return numberIsPrime ? 'yes' : 'no';
+  return numberIsPrime;
 };
 
-const primeGame = () => {
-  const userName = getUserName();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  play(3, primeNumber, userName);
+const primeNumber = () => {
+  const number = randomNumber(2, 100);
+  console.log(`Question: ${number}`);
+  return isPrime(number) ? 'yes' : 'no';
 };
 
-export default primeGame;
+const playPrimeGame = () => {
+  const question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  play(primeNumber, question);
+};
+
+export default playPrimeGame;
