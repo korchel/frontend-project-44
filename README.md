@@ -7,6 +7,7 @@ brain-progression - user must name the missing member of the given sequence of n
 
 How to install:
 git clone git@github.com:korchel/frontend-project-44.git
+npm ci
 cd frontend-project-44
 npm link
 
