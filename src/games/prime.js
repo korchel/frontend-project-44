@@ -14,13 +14,14 @@ const isPrime = (number) => {
 
 const primeNumber = () => {
   const number = randomNumber(2, 100);
-  console.log(`Question: ${number}`);
-  return isPrime(number) ? 'yes' : 'no';
+  const question = `${number}`;
+  const solution = isPrime(number) ? 'yes' : 'no';
+  return [question, solution];
 };
 
 const playPrimeGame = () => {
-  const question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  play(primeNumber, question);
+  const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  play(primeNumber, gameQuestion);
 };
 
 export default playPrimeGame;

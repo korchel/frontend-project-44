@@ -25,13 +25,14 @@ const calculation = () => {
   const operand2 = randomNumber(0, 10);
   const operations = ['+', '-', '*'];
   const operation = operations[randomIndex(operations)];
-  console.log(`Question: ${operand1} ${operation} ${operand2}`);
-  return miniCalculator(operand1, operand2, operation);
+  const question = `${operand1} ${operation} ${operand2}`;
+  const solution = miniCalculator(operand1, operand2, operation);
+  return [question, solution];
 };
 
 const playCalculationGame = () => {
-  const question = 'What is the result of the expression?';
-  play(calculation, question);
+  const gameQuestion = 'What is the result of the expression?';
+  play(calculation, gameQuestion);
 };
 
 export default playCalculationGame;

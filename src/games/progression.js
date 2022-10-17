@@ -13,13 +13,14 @@ const sequenceGenerator = () => {
   const indexOfHiddenMember = randomIndex(sequence);
   const hiddenMember = sequence[indexOfHiddenMember];
   sequence.splice(indexOfHiddenMember, 1, '..');
-  console.log(`Question: ${sequence.join(' ')}`);
-  return String(hiddenMember);
+  const question = `${sequence.join(' ')}`;
+  const solution = String(hiddenMember);
+  return [question, solution];
 };
 
 const playProgressionGame = () => {
-  const question = 'What number is missing in the progression?';
-  play(sequenceGenerator, question);
+  const gameQuestion = 'What number is missing in the progression?';
+  play(sequenceGenerator, gameQuestion);
 };
 
 export default playProgressionGame;
