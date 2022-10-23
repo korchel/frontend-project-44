@@ -1,38 +1,38 @@
-import play from '../index.js';
-import randomNumber from '../randomNumbers.js';
+import playGame from '../index.js';
+import generateRandomNumber from '../randomNumbers.js';
 
-const randomIndex = (array) => Math.floor(Math.random() * array.length);
-
-const miniCalculator = (operand1, operand2, operation) => {
+const calculateExpression = (operand1, operand2, operation) => {
   let result;
   switch (operation) {
     case '+':
-      result = String(operand1 + operand2);
-      break;
+      result = operand1 + operand2;
+      return result;
     case '-':
-      result = String(operand1 - operand2);
-      break;
+      result = operand1 - operand2;
+      return result;
     case '*':
-      result = String(operand1 * operand2);
-      break;
+      result = operand1 * operand2;
+      return result;
     default:
+      throw new Error(`Unknown operation ${operation}`);
   }
-  return result;
 };
 
-const calculation = () => {
-  const operand1 = randomNumber(0, 10);
-  const operand2 = randomNumber(0, 10);
-  const operations = ['+', '-', '*'];
-  const operation = operations[randomIndex(operations)];
-  const question = `${operand1} ${operation} ${operand2}`;
-  const solution = miniCalculator(operand1, operand2, operation);
-  return [question, solution];
+const operations = ['+', '-', '*'];
+
+const generateOneRoundCalculationGame = () => {
+  const operand1 = generateRandomNumber(0, 10);
+  const operand2 = generateRandomNumber(0, 10);
+  const operation = operations[generateRandomNumber(0, operations.length - 1)];
+
+  const roundQuestion = `${operand1} ${operation} ${operand2}`;
+  const solution = String(calculateExpression(operand1, operand2, operation));
+  return [roundQuestion, solution];
 };
 
 const playCalculationGame = () => {
   const gameQuestion = 'What is the result of the expression?';
-  play(calculation, gameQuestion);
+  playGame(generateOneRoundCalculationGame, gameQuestion);
 };
 
 export default playCalculationGame;

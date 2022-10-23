@@ -1,24 +1,26 @@
-import play from '../index.js';
-import randomNumber from '../randomNumbers.js';
+import playGame from '../index.js';
+import generateRandomNumber from '../randomNumbers.js';
 
-const gcd = () => {
-  let a = randomNumber(1, 100);
-  let b = randomNumber(1, 100);
-  const question = `${a} ${b}`;
-  while (a !== 0 && b !== 0) {
-    if (a > b) {
-      a %= b;
+const generateOneRoundGcdGame = () => {
+  let number1 = generateRandomNumber(1, 100);
+  let number2 = generateRandomNumber(1, 100);
+  const roundQuestion = `${number1} ${number2}`;
+  
+  while (number1 !== 0 && number2 !== 0) {
+    if (number1 > number2) {
+      number1 %= number2;
     } else {
-      b %= a;
+      number2 %= number1;
     }
   }
-  const solution = String(a + b);
-  return [question, solution];
+
+  const solution = String(number1 + number2);
+  return [roundQuestion, solution];
 };
 
 const playGcdGame = () => {
   const gameQuestion = 'Find the greatest common divisor of given numbers.';
-  play(gcd, gameQuestion);
+  playGame(generateOneRoundGcdGame, gameQuestion);
 };
 
 export default playGcdGame;

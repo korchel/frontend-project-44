@@ -1,26 +1,26 @@
-import play from '../index.js';
-import randomNumber from '../randomNumbers.js';
-
-const randomIndex = (array) => Math.floor(Math.random() * array.length);
+import playGame from '../index.js';
+import generateRandomNumber from '../randomNumbers.js';
 
 const makeSequence = (sequenceLength, sequenceDifference) => Array.from({ length: sequenceLength })
   .map((item, index) => (index + 1) * sequenceDifference);
 
-const sequenceGenerator = () => {
-  const sequenceDifference = randomNumber(2, 11);
-  const sequenceLength = randomNumber(5, 11);
+const generateOneRoundProgressionGame = () => {
+  const sequenceDifference = generateRandomNumber(2, 11);
+  const sequenceLength = generateRandomNumber(5, 11);
   const sequence = makeSequence(sequenceLength, sequenceDifference);
-  const indexOfHiddenMember = randomIndex(sequence);
+
+  const indexOfHiddenMember = generateRandomNumber(0, sequence.length - 1);
   const hiddenMember = sequence[indexOfHiddenMember];
-  sequence.splice(indexOfHiddenMember, 1, '..');
-  const question = `${sequence.join(' ')}`;
+  sequence[indexOfHiddenMember] = '..';
+  
+  const roundQuestion = sequence.join(' ');
   const solution = String(hiddenMember);
-  return [question, solution];
+  return [roundQuestion, solution];
 };
 
 const playProgressionGame = () => {
   const gameQuestion = 'What number is missing in the progression?';
-  play(sequenceGenerator, gameQuestion);
+  playGame(generateOneRoundProgressionGame, gameQuestion);
 };
 
 export default playProgressionGame;
