@@ -12,7 +12,7 @@ const generateOneRoundProgressionGame = () => {
   const indexOfHiddenMember = generateRandomNumber(0, sequence.length - 1);
   const hiddenMember = sequence[indexOfHiddenMember];
   sequence[indexOfHiddenMember] = '..';
-  
+
   const roundQuestion = sequence.join(' ');
   const solution = String(hiddenMember);
   return [roundQuestion, solution];

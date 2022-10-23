@@ -5,7 +5,7 @@ const generateOneRoundGcdGame = () => {
   let number1 = generateRandomNumber(1, 100);
   let number2 = generateRandomNumber(1, 100);
   const roundQuestion = `${number1} ${number2}`;
-  
+
   while (number1 !== 0 && number2 !== 0) {
     if (number1 > number2) {
       number1 %= number2;

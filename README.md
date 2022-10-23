@@ -23,17 +23,17 @@ brain-progression
 [![Actions Status](https://github.com/korchel/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/korchel/frontend-project-44/actions)
 <a href="https://codeclimate.com/github/korchel/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/f6d6a8f32231769002ff/maintainability" /></a>
 
-### brain-even demonstration:
-[![asciicast](https://asciinema.org/a/oH4Tzc09wbiRuucAECA8WK43S.svg)](https://asciinema.org/a/oH4Tzc09wbiRuucAECA8WK43S)
+### brain-calc demonstration:
+[![asciicast](https://asciinema.org/a/uWicYGucerA96KVyjlCMM7lLQ.svg)](https://asciinema.org/a/uWicYGucerA96KVyjlCMM7lLQ)
 
-### brain-calc demostration:
-[![asciicast](https://asciinema.org/a/GoGEofjcYeiKo4TW4qZWRHzjM.svg)](https://asciinema.org/a/GoGEofjcYeiKo4TW4qZWRHzjM)
+### brain-even demostration:
+[![asciicast](https://asciinema.org/a/FEiSdVlRcorVVfAWd7sBVrXKr.svg)](https://asciinema.org/a/FEiSdVlRcorVVfAWd7sBVrXKr)
 
 ### brain-gcd demonstration:
-[![asciicast](https://asciinema.org/a/wY2MgyxqZNOLNRcyFV2lwKb2w.svg)](https://asciinema.org/a/wY2MgyxqZNOLNRcyFV2lwKb2w)
+[![asciicast](https://asciinema.org/a/q2qnzhtOwNmmLVtu98jLZJhGd.svg)](https://asciinema.org/a/q2qnzhtOwNmmLVtu98jLZJhGd)
 
 ### brain-progression demonstration:
-[![asciicast](https://asciinema.org/a/9HaVw1xlNWKGnBwbWe0MGbmQ2.svg)](https://asciinema.org/a/9HaVw1xlNWKGnBwbWe0MGbmQ2)
+[![asciicast](https://asciinema.org/a/1IVaC5ZIQuRGzKzjvLRcWsJPq.svg)](https://asciinema.org/a/1IVaC5ZIQuRGzKzjvLRcWsJPq)
 
 ### brain-prime demonstration:
-[![asciicast](https://asciinema.org/a/RgsFeSQQuo1lBgv73BpYMiq9z.svg)](https://asciinema.org/a/RgsFeSQQuo1lBgv73BpYMiq9z)
+[![asciicast](https://asciinema.org/a/HmKz1iSGhrD9aFAlnMX4yTuS6.svg)](https://asciinema.org/a/HmKz1iSGhrD9aFAlnMX4yTuS6)
