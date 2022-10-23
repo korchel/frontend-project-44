@@ -1,20 +1,25 @@
 import playGame from '../index.js';
 import generateRandomNumber from '../randomNumbers.js';
 
-const generateOneRoundGcdGame = () => {
-  let number1 = generateRandomNumber(1, 100);
-  let number2 = generateRandomNumber(1, 100);
-  const roundQuestion = `${number1} ${number2}`;
-
-  while (number1 !== 0 && number2 !== 0) {
-    if (number1 > number2) {
-      number1 %= number2;
+const getGcd = (number1, number2) => {
+  let a = number1;
+  let b = number2;
+  while (a !== 0 && b !== 0) {
+    if (a > b) {
+      a %= b;
     } else {
-      number2 %= number1;
+      b %= a;
     }
   }
+  return a + b;
+};
 
-  const solution = String(number1 + number2);
+const generateOneRoundGcdGame = () => {
+  const number1 = generateRandomNumber(1, 100);
+  const number2 = generateRandomNumber(1, 100);
+
+  const roundQuestion = `${number1} ${number2}`;
+  const solution = String(getGcd(number1, number2));
   return [roundQuestion, solution];
 };
 
