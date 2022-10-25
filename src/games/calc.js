@@ -2,17 +2,13 @@ import playGame from '../index.js';
 import generateRandomNumber from '../randomNumbers.js';
 
 const calculateExpression = (operand1, operand2, operation) => {
-  let result;
   switch (operation) {
     case '+':
-      result = operand1 + operand2;
-      return result;
+      return operand1 + operand2;
     case '-':
-      result = operand1 - operand2;
-      return result;
+      return operand1 - operand2;
     case '*':
-      result = operand1 * operand2;
-      return result;
+      return operand1 * operand2;
     default:
       throw new Error(`Unknown operation ${operation}`);
   }

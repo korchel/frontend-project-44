@@ -2,14 +2,12 @@ import playGame from '../index.js';
 import generateRandomNumber from '../randomNumbers.js';
 
 const isPrime = (number) => {
-  let numberIsPrime = true;
-  for (let n = 2; n < number / 2 + 1; n += 1) {
+  for (let n = 2; n <= Math.sqrt(number); n += 1) {
     if (number % n === 0) {
-      numberIsPrime = false;
-      break;
+      return false;
     }
   }
-  return numberIsPrime;
+  return true;
 };
 
 const generateOneRoundPrimeGame = () => {
