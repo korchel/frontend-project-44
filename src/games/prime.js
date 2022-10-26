@@ -2,6 +2,9 @@ import playGame from '../index.js';
 import generateRandomNumber from '../randomNumbers.js';
 
 const isPrime = (number) => {
+  if (number < 2) {
+    throw new Error('The number must be greater than 2!');
+  }
   for (let n = 2; n <= Math.sqrt(number); n += 1) {
     if (number % n === 0) {
       return false;
